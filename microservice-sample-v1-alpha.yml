@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:sqlserver://ALPHARLA.ngintad.local:1040;databaseName=car-db
     username: carsample
-    password: '{cipher}3633c1e821acdab5f215a8545b0fe767f6775e3e10126584b78ea470b2fd1e50'
+    password: '{cipher}052d52623f96af5ee495551601eb439dc543685338d5c524fe2efaa0070baac8'
 
 eureka:
   client:
