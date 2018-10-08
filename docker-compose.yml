@@ -15,7 +15,7 @@ services:
       - "8888:8888"
     entrypoint: ["./entrypoint.sh", "eureka-server", "8761"]
     environment:
-      - SPRING_OPTS=-Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka -Dspring.cloud.config.server.git.uri=https://git.neogrid.com/paas/microservice-config.git -Dspring.cloud.config.server.git.username=mtres -Dspring.cloud.config.server.git.password=
+      - SPRING_OPTS=-Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka -Dspring.cloud.config.server.git.uri=https://git.neogrid.com/paas/microservice-config.git -Dspring.cloud.config.server.git.username= -Dspring.cloud.config.server.git.password=
       - JAVA_OPTS=-Xmx512m -Xms128m
     depends_on:
       - eureka-server

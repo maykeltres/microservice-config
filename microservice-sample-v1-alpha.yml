@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://ALPHARLA.ngintad.local:1040;databaseName=DatabaseName
-    username: DatabaseUserName
-    password: '{cipher}DatabaseUserPassword'
+    url: jdbc:sqlserver://ALPHARLA.ngintad.local:1040;databaseName=car-db
+    username: carsample
+    password: '{cipher}3633c1e821acdab5f215a8545b0fe767f6775e3e10126584b78ea470b2fd1e50'
 
 eureka:
   client:
