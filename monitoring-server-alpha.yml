@@ -1,4 +1,4 @@
 ldap:
-  username: mtres@mercador.local
+  username: bamboosvn@mercador.local
   url: ldap://mercador.local:389
-  password: '{cipher}7545aba0e8c5ca6982ea31256c760d41d6323ce7bc7c5e71c8538e5b39466edd'
+  password: '{cipher}c7ad36fd355922f3cbce5ae92d794d75a56276767d36776a5ac45a8a006efa58'
