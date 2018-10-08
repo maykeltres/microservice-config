@@ -1,0 +1,48 @@
+server:
+  display-name: ApiGateway Server
+  compression:
+    enabled: false
+  tomcat:
+    max-threads: 400
+    min-spare-threads: 400
+
+security:
+  basic:
+    enabled: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${random.value}
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+  threadpool:
+    default:
+      allowMaximumSizeToDivergeFromCoreSize: true
+      coreSize: 400
+      maximumSize: 400
+      queueSizeRejectionThreshold: 1000
+      maxQueueSize: 1000
+
+zuul:
+  ribbonIsolationStrategy: THREAD
+  threadPool:
+    useSeparateThreadPools: true
+  host:
+    maxPerRouteConnections: 800
+    maxTotalConnections: 1400
+  ignoredServices: '*'
+  ignoredPatterns: /**/actuator/**
+  debug:
+    request: false
+  prefix: /api
+  routes:
+    microservice-sample:
+      path: /sample/v1/**
+      serviceId: microservice-sample-v1

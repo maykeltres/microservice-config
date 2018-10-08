@@ -1,0 +1,11 @@
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 1
+  display-name: Microservice Sample Service
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${random.value}

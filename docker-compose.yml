@@ -1,0 +1,36 @@
+# https://docs.docker.com/compose/compose-file/#reference-and-guidelinesdocker
+version: "3.5"
+services:
+
+  eureka-server:
+    image: registry.alpha.cloud.neogrid.com/neogrid/eureka-server:1.0.0
+    ports:
+      - "8761:8761"
+    environment:
+      - JAVA_OPTS=-Xmx512m -Xms128m
+
+  configuration-server:
+    image: registry.alpha.cloud.neogrid.com/neogrid/configuration-server:1.0.0
+    ports:
+      - "8888:8888"
+    entrypoint: ["./entrypoint.sh", "eureka-server", "8761"]
+    environment:
+      - SPRING_OPTS=-Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka -Dspring.cloud.config.server.git.uri=https://git.neogrid.com/grupo/grupo-config.git -Dspring.cloud.config.server.git.username=sampleUser -Dspring.cloud.config.server.git.password=samplePass
+      - JAVA_OPTS=-Xmx512m -Xms128m
+    depends_on:
+      - eureka-server
+    restart: always
+
+    # Insira os seus micro-serviços aqui
+#    example-service:
+#      #image: registry.alpha.cloud.neogrid.com/path/to/image:imageTag
+#      build: exampleServiceDirContainingDockerfileToBuild
+#      ports:
+#        - "8080:8080"
+#      environment:
+#      - SPRING_PROFILES_ACTIVE=alpha
+#      - SPRING_OPTS=-Deureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+#      - JAVA_OPTS=-Xmx512m -Xms128m
+#    depends_on:
+#      - configuration-server
+#    restart: always

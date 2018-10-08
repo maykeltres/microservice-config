@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://ALPHARLA.ngintad.local:1040;databaseName=DatabaseName
+    username: DatabaseUserName
+    password: '{cipher}DatabaseUserPassword'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka

@@ -1,0 +1,4 @@
+ldap:
+  username: usuarioLDAP@mercador.local
+  url: ldap://10.1.8.7:389
+  password: '{cipher}SenhaCifradaDoUsuarioLDAP'

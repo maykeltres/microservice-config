@@ -1,0 +1,9 @@
+ldap:
+  user-search-base: DC=mercador,DC=local
+  group-search-base: DC=mercador,DC=local
+  auth-by-email: true
+  group: CN=NeoGrid - Porto Alegre,OU=Security,OU=Neogrid-Mercador,OU=Usuarios,DC=mercador,DC=local
+  
+security:
+  basic:
+    enabled: true
