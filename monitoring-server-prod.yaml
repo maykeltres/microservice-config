@@ -1,0 +1,4 @@
+ldap:
+  username: bamboosvn@mercador.local
+  url: ldap://10.1.8.7:389
+  password: '{cipher}c7ad36fd355922f3cbce5ae92d794d75a56276767d36776a5ac45a8a006efa58'
